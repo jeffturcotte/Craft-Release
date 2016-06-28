@@ -48,6 +48,12 @@ return array(
 	'allowedFileExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,htm,html,jpeg,jpg,js,mid,mov,mp3,mp4,m4a,m4v,mpc,mpeg,mpg,ods,odt,ogg,ogv,pdf,png,potx,pps,ppsm,ppsx,ppt,pptm,pptx,ppz,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,svg,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vob,vsd,wav,webm,wma,wmv,xls,xlsx,zip',
 
 	/**
+	 * If this is set to true, then a tag name of "Proteines" will also match a tag name of "Protéines". Otherwise,
+	 * they are treated as the same tag. Note that this 
+	 */
+	'allowSimilarTags' => false,
+
+	/**
 	 * Whether or not to allow uppercase letters in the slug. Defaults to false.
 	 */
 	'allowUppercaseInSlug' => false,
@@ -626,6 +632,15 @@ return array(
 	 * will never automatically set the flag.
 	 */
 	'useSecureCookies' => 'auto',
+
+	/**
+	 * Determines what protocol/schema Craft will use when generating tokenized URLs. If set to 'auto',
+	 * Craft will check the siteUrl and the protocol of the current request and if either of them are https
+	 * will use https in the tokenized URL. If not, will use http.
+	 * 
+	 * If set to `false`, the Craft will always use http. If set to `true`, then, Craft will always use `https`. 
+	 */
+	'useSslOnTokenizedUrls' => 'auto',
 
 	/**
 	 * The amount of time a user stays logged in.
